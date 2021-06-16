@@ -1,0 +1,25 @@
+type Query {
+  library(filter: String) : Library
+}
+
+type Library {
+  games: [Game!]
+}
+
+type Game {
+  publisher: String!
+  name: String!
+  nickname: String
+  rating: [Rating]
+}
+
+type Mutation {
+  addGame(publisher: String!, name: String!, nickname: String, rating: Rating): Game!
+  removeGame(publisher: String!, name: String!): Game!
+}
+
+enum Rating {
+  FAVORITE
+  MEH
+  DISLIKE
+}
