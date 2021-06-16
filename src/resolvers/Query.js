@@ -1,4 +1,4 @@
-const library = async (args, context) => {
+const library = async (parent, args, context, info) => {
   const where = args.filter ? {
     OR: [
       { publisher: { contains: args.filter} },
@@ -7,9 +7,11 @@ const library = async (args, context) => {
     ]
   } : {}
 
-  const library = await context.prisma.game.findMany({
+  const games = await context.prisma.game.findMany({
     where
   })
+
+  return { games }
 }
 
 module.exports = { library }

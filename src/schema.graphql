@@ -1,16 +1,16 @@
 type Query {
-  library(filter: String) : Library
+  library(filter: String) : Library!
 }
 
 type Library {
-  games: [Game!]
+  games: [Game!]!
 }
 
 type Game {
   publisher: String!
   name: String!
   nickname: String
-  rating: [Rating]
+  rating: Rating
 }
 
 type Mutation {

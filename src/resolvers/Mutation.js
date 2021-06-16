@@ -18,7 +18,7 @@ const addGame = async (parent, args, context, info) => {
       publisher: args.publisher,
       name: args.name,
       nickname: args.nickname,
-      rating: args.rating.rating
+      rating: args.rating
     }
   })
 
