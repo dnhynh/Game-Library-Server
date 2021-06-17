@@ -5,14 +5,12 @@ const path = require('path')
 const prisma = new PrismaClient()
 
 const Query = require('./resolvers/Query')
-const Game = require('./resolvers/Game')
 const Mutation = require('./resolvers/Mutation')
 
 const pubsub = new PubSub()
 
 const resolvers = {
   Query,
-  Game,
   Mutation
 }
 
